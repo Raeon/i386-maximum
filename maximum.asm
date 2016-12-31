@@ -24,7 +24,7 @@ begin:
 	
 	; is it smaller or equal? next!
 	cmp	eax, ebx	; compare CUR to BIGGEST
-	jle	next		; if CUR LESS_THAN_OR_EQUAL BIGGEST, go to BEGIN
+	jle	next		; if CUR LESS_THAN_OR_EQUAL BIGGEST, go to NEXT
 	
 	; is it larger?
 	mov	ebx, eax	; EAX is the new largest, store in EBX
@@ -32,7 +32,7 @@ begin:
 next:
 	inc	edi		; increase EDI
 	mov	al, byte [edi]	; get number at EDI
-	jmp	begin		; loop around
+	jmp	begin		; go back to BEGIN
 
 finish:
 	; end the program
